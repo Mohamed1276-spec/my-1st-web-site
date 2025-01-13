@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday Questionnaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .questionnaire {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .options {
+      margin-left: 20px;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Holiday Experience Questionnaire</h1>
+
+  <div class="questionnaire">
+    <form id="questionnaireForm" onsubmit="submitForm(event)">
+      <!-- Question 1 -->
+      <div class="question">
+        <label>How could you describe your holidays?</label>
+        <div class="options">
+          <input type="radio" id="relaxed" name="holidayDescription" value="Relaxed" required>
+          <label for="relaxed">A) Relaxed</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="balanced" name="holidayDescription" value="Balanced" required>
+          <label for="balanced">B) Balanced between relaxing and busy</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="busy" name="holidayDescription" value="Mostly Busy" required>
+          <label for="busy">C) Mostly busy and stressful</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <label>What type of activities make you the happiest during holidays?</label>
+        <div class="options">
+          <input type="radio" id="relaxing" name="holidayActivities" value="Relaxing" required>
+          <label for="relaxing">A) Relaxing</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="socializing" name="holidayActivities" value="Socializing with friends" required>
+          <label for="socializing">B) Socializing with friends</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="traveling" name="holidayActivities" value="Traveling and exploring" required>
+          <label for="traveling">C) Traveling and exploring</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="visitingFamily" name="holidayActivities" value="Visiting family" required>
+          <label for="visitingFamily">D) Visiting family</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <label>Who do you usually spend your holidays with?</label>
+        <div class="options">
+          <input type="radio" id="family" name="holidayWith" value="Family" required>
+          <label for="family">A) Family</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="friends" name="holidayWith" value="Friends" required>
+          <label for="friends">B) Friends</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="both" name="holidayWith" value="Both" required>
+          <label for="both">C) Both</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="alone" name="holidayWith" value="Alone" required>
+          <label for="alone">D) Alone</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <label>Do you feel stressed during holidays?</label>
+        <div class="options">
+          <input type="radio" id="sometimes" name="holidayStress" value="Sometimes" required>
+          <label for="sometimes">A) Sometimes</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="yes" name="holidayStress" value="Yes" required>
+          <label for="yes">B) Yes</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="no" name="holidayStress" value="No" required>
+          <label for="no">C) No</label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <label>What causes stress during holidays?</label>
+        <div class="options">
+          <input type="radio" id="money" name="holidayStressCause" value="Money problems" required>
+          <label for="money">A) Money problems</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="familySocial" name="holidayStressCause" value="Family or social issues" required>
+          <label for="familySocial">B) Family or social issues</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="tooMuchToDo" name="holidayStressCause" value="Too much to do" required>
+          <label for="tooMuchToDo">C) Too much to do</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="highExpectation" name="holidayStressCause" value="High expectation" required>
+          <label for="highExpectation">D) High expectation</label>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question">
+        <label>If you could change one thing about your holidays, what would it be?</label>
+        <div class="options">
+          <input type="radio" id="moreTimeWithLovedOnes" name="changeHoliday" value="Spend more time with loved ones" required>
+          <label for="moreTimeWithLovedOnes">A) Spend more time with loved ones</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="moreFreeTime" name="changeHoliday" value="Have more free time" required>
+          <label for="moreFreeTime">B) Have more free time</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="travelMore" name="changeHoliday" value="Travel more" required>
+          <label for="travelMore">C) Travel more</label>
+        </div>
+        <div class="options">
+          <input type="radio" id="lessThingsToDo" name="changeHoliday" value="Have less things to do" required>
+          <label for="lessThingsToDo">D) Have less things to do</label>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();  // Prevent the form from submitting to a server
+      window.location.href = "thankyou.html";  // Redirect to thank you page
+    }
+  </script>
+
+</body>
+</html>
